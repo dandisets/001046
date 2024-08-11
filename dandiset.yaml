@@ -14,9 +14,9 @@ assetsSummary:
     name: Neurodata Without Borders (NWB)
     schemaKey: StandardsType
   measurementTechnique: []
-  numberOfBytes: 286388344
-  numberOfFiles: 4
-  numberOfSubjects: 2
+  numberOfBytes: 1286915940
+  numberOfFiles: 9
+  numberOfSubjects: 3
   schemaKey: AssetsSummary
   species:
   - identifier: http://purl.obolibrary.org/obo/NCBITaxon_59729
@@ -93,10 +93,27 @@ contributor:
   - dcite:Funder
   schemaKey: Organization
 dateCreated: '2024-06-04T13:45:15.162160+00:00'
-description: The B1 dataset contains unsorted spike times, audio recordings, and audio
-  spectrograms from a zebra finch songbird during natural vocal behavior. Neural activity
-  was recorded using Neuropixels probes from premotor and motor nuclei. We provide
-  precomputed spectrograms for each session. The raw audio is also provided.
+description: 'The B1 dataset contains unsorted spike times, audio recordings, and
+  audio spectrograms from a zebra finch songbird during natural vocal behavior. Neural
+  activity was recorded using Neuropixels probes from premotor and motor nuclei. We
+  provide precomputed spectrograms for each session. The raw audio is also provided.
+
+
+  In each datafile we provide the following as `acquisitions`: `tx` (threshold crossings
+  at the full 30kHz resolution), `vocalizations` (the full sampling rate vocal recordings),
+  `eval_mask_audio` (the mask for FALCON evaluation periods to be applied to the vocalizations).
+  We also provide the following in the `trials` field: `spectrogram_times`, `spectrogram_frequencies`,
+  `spectrogram_values`, and `spectrogram_eval_mask`. The spectrogram comprises the
+  FALCON decoding target for this dataset.
+
+
+  As part of the FALCON challenge, dataset files are released in three ways. The `held-in-calib`
+  data includes many trials of data intended for calibration of decoders in the FALCON
+  challenge. The `held-in-minival` data is a small subset of the `held-in-calib` data
+  intended for FALCON models to validate submission format. Lastly, `held-out-calib`
+  data are separate sessions of data from `held-in-calib`, but have much fewer trials,
+  intended to be used for few-shot recalibration. Please bear in mind these factors
+  if making use of this dataset for purposes outside of the FALCON Benchmark.'
 ethicsApproval: []
 id: DANDI:001046/draft
 identifier: DANDI:001046
