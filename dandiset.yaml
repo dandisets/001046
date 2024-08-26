@@ -2,8 +2,7 @@
 # It can be edited online at https://dandiarchive.org/dandiset/001046
 # and obtained from the dandiarchive.
 '@context': https://raw.githubusercontent.com/dandi/schema/master/releases/0.6.7/context.json
-about:
-- {}
+about: []
 access:
 - schemaKey: AccessRequirements
   status: dandi:OpenAccess
@@ -113,8 +112,15 @@ description: 'The B1 dataset contains unsorted spike times, audio recordings, an
   intended for FALCON models to validate submission format. Lastly, `held-out-calib`
   data are separate sessions of data from `held-in-calib`, but have much fewer trials,
   intended to be used for few-shot recalibration. Please bear in mind these factors
-  if making use of this dataset for purposes outside of the FALCON Benchmark.'
-ethicsApproval: []
+  if making use of this dataset for purposes outside of the FALCON Benchmark. Each
+  dataset split is considered one "subject" by the DANDI repository; only data from
+  one songbird is included.'
+ethicsApproval:
+- contactPoint:
+    email: tgentner@ucsd.edu
+    schemaKey: ContactPoint
+  identifier: S15027, University of California San Diego IACUC
+  schemaKey: EthicsApproval
 id: DANDI:001046/draft
 identifier: DANDI:001046
 keywords: []
@@ -124,7 +130,14 @@ manifestLocation:
 - https://api.dandiarchive.org/api/dandisets/001046/versions/draft/assets/
 name: 'FALCON Benchmark B1: zebra finch RA Neuropixels recordings during birdsong'
 protocol: []
-relatedResource: []
+relatedResource:
+- name: Neural population dynamics in songbird RA and HVC during learned motor-vocal
+    behavior
+  relation: dcite:Describes
+  repository: arXiv
+  resourceType: dcite:JournalArticle
+  schemaKey: Resource
+  url: https://arxiv.org/abs/2407.06244
 repository: https://dandiarchive.org
 schemaKey: Dandiset
 schemaVersion: 0.6.7
